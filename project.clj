@@ -21,6 +21,7 @@
                  [org.clojure/clojure "1.10.1"]
                  [org.clojure/tools.cli "0.4.2"]
                  [org.clojure/tools.logging "0.5.0"]
+                 [org.clojure/clojurescript "1.10.238" :scope "provided"]
                  [org.webjars.npm/bulma "0.8.0"]
                  [org.webjars.npm/material-icons "0.3.1"]
                  [org.webjars/webjars-locator "0.38"]
@@ -28,17 +29,34 @@
                  [ring/ring-core "1.8.0"]
                  [ring/ring-defaults "0.3.2"]
                  [selmer "1.12.18"]
-                 [com.novemberain/monger "3.1.0"]]
+                 [com.novemberain/monger "3.1.0"]
+                 [reagent "0.10.0"]]
 
   :min-lein-version "2.0.0"
   
   :source-paths ["src/clj"]
   :test-paths ["test/clj"]
-  :resource-paths ["resources"]
+  :resource-paths ["resources" "target/cljsbuild"]
   :target-path "target/%s/"
   :main ^:skip-aot businesspartners.core
 
-  :plugins []
+  :plugins [[lein-cljsbuild "1.1.7"]]
+
+  :cljsbuild
+  {:builds
+   {:app {:source-paths ["src/cljs"]
+          :compiler {:output-to "target/cljsbuild/public/js/app.js"
+                     :output-dir "target/cljsbuild/public/js/out"
+                     :main "businesspartners.core"
+                     :asset-path "/js/out"
+                     :optimizations :none
+                     :source-map true
+                     :pretty-print true}}}}
+  :clean-targets
+  ^{:protect false}
+  [:target-path
+   [:cljsbuild :builds :app :compiler :output-dir]
+   [:cljsbuild :builds :app :compiler :output-to]]
 
   :profiles
   {:uberjar {:omit-source true

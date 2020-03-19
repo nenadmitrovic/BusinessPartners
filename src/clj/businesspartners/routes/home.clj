@@ -8,8 +8,16 @@
    [businesspartners.db.dbbroker :as db]))
 
 
+(defn test-page [request]
+  (layout/render
+    request
+    "test.html"))
+
+
 (defn home-page [request]
-  (layout/render request "home.html" {:docs (-> "docs/docs.md" io/resource slurp)}))
+  (layout/render
+    request
+    "home.html"))
 
 (defn about-page [request]
   (layout/render request "about.html"))
@@ -18,6 +26,7 @@
   [""
    {:middleware [middleware/wrap-csrf
                  middleware/wrap-formats]}
+   ["/test" {:get test-page}]
    ["/" {:get home-page}]
    ["/about" {:get about-page}]])
 
