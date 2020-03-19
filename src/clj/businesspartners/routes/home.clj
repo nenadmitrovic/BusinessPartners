@@ -4,7 +4,9 @@
    [clojure.java.io :as io]
    [businesspartners.middleware :as middleware]
    [ring.util.response]
-   [ring.util.http-response :as response]))
+   [ring.util.http-response :as response]
+   [businesspartners.db.dbbroker :as db]))
+
 
 (defn home-page [request]
   (layout/render request "home.html" {:docs (-> "docs/docs.md" io/resource slurp)}))
