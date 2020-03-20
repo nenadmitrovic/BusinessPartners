@@ -4,23 +4,44 @@
 (defn add-business-partner []
   (let [fields (r/atom {})]
     (fn []
-      [:div.container {:class "mt-4"}
-       [:div.text-center [:h2 "Add New Business Partner"]
-       [:p "Fill in the form bellow to add new business partner"]]
+      [:div.container.mt-5.w-50
+       [:div.text-center [:h2 "Add A New Business Partner"]
+       [:p "Fill in the form bellow to add a new business partner"]]
        [:form {:action "/action_page"}
         [:div.form-group
-         [:label {:for "name"} "Name"]
-         [:input#name.form-control {:type "text" :name "name"}]]
+         [:label {:for :name} "Name"]
+         [:input#name.form-control
+          {:type :text
+           :name :name
+           :on-change #(swap! fields assoc :name (-> % .-target .-value))
+           :value (:name @fields)
+           }]]
         [:div.form-group
-         [:label {:for "adress"} "Adress"]
-         [:input#adress.form-control {:type "text" :name "adress"}]]
+         [:label {:for :address} "Adress"]
+         [:input#address.form-control
+          {:type :text
+           :name :address
+           :on-change #(swap! fields assoc :address (-> % .-target .-value))
+           :value (:address @fields)
+           }]]
         [:div.form-group
-         [:label {:for "phone"} "Phone"]
-         [:input#phone.form-control {:type "text" :name "phone"}]]
+         [:label {:for :phone} "Phone"]
+         [:input#phone.form-control
+          {:type :text
+           :name :phone
+           :on-change #(swap! fields assoc :phone (-> % .-target .-value))
+           :value (:phone @fields)
+           }
+          ]]
         [:div.form-group
-         [:label {:for "email"} "Email"]
-         [:input#email.form-control {:type "email" :name "email"}]]
-        [:button.btn.btn-primary.btn-lg {:type "submit"} "Save"]]])))
+         [:label {:for :email} "Email"]
+         [:input#email.form-control
+          {:type :email
+           :name :email
+           :on-change #(swap! fields assoc :email (-> % .-target .-value))
+           :value (:email @fields)
+           }]]
+        [:button.btn.btn-primary.btn-lg {:type :submit} "Save"]]])))
 
 (defn home []
   [add-business-partner])
