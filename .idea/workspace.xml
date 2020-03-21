@@ -2,7 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3fa068f7-de9b-4793-9d22-fae590d74c94" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__cljs_ajax_0_7_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__commons_logging_1_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__net_colourcoding_poppea_0_2_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_apache_httpcomponents_httpasyncclient_4_1_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_apache_httpcomponents_httpclient_4_5_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_apache_httpcomponents_httpcore_4_4_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_apache_httpcomponents_httpcore_nio_4_4_6.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/businesspartners.iml" beforeDir="false" afterPath="$PROJECT_DIR$/businesspartners.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project.clj" beforeDir="false" afterPath="$PROJECT_DIR$/project.clj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/html/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/html/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/clj/businesspartners/routes/home.clj" beforeDir="false" afterPath="$PROJECT_DIR$/src/clj/businesspartners/routes/home.clj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cljs/businesspartners/core.cljs" beforeDir="false" afterPath="$PROJECT_DIR$/src/cljs/businesspartners/core.cljs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,7 +47,7 @@
     <property name="cursive.last.file.extension./home/nenad/Desktop/ClojureJob/businesspartners/src/clj" value="clj" />
     <property name="cursive.last.file.extension./home/nenad/Desktop/ClojureJob/businesspartners/src/cljs" value="cljs" />
   </component>
-  <component name="ReplState" timestamp="1584665189390">{:repl-history {:ide [], :local [], :remote []}}</component>
+  <component name="ReplState" timestamp="1584806225689">{:repl-history {:ide [], :local [], :remote []}}</component>
   <component name="RunManager">
     <configuration name="REPL for businesspartners" type="ClojureREPL" factoryName="Local" activateToolWindowBeforeRun="false" temporary="true">
       <module name="businesspartners" />
@@ -89,5 +100,11 @@
       <updated>1584649139596</updated>
     </task>
     <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="649" y="380" key="com.intellij.ide.util.TipDialog" timestamp="1584799986726">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="649" y="380" key="com.intellij.ide.util.TipDialog/67.27.1853.1053/1920.0.1920.1080@67.27.1853.1053" timestamp="1584799986726" />
   </component>
 </project>

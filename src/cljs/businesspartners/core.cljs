@@ -1,15 +1,38 @@
 (ns businesspartners.core
-  (:require [reagent.core :as r]))
+  (:require [reagent.core :as r]
+            [ajax.core :refer [GET POST]]
+            [clojure.string :as string]))
+
+(defn save-business-partner [fields errors]
+  (POST "/save-business-partner"
+        {:format :json
+         :headers
+                 {"Accept" "application/transit+json"
+                  "x-csrf-token" (.-value (.getElementById js/document "token"))}
+         :params @fields
+         :handler #(do
+                     (.log js/console (str "response:" %))
+                     (reset! errors nil))
+         :error-handler #(do
+                           (.log js/console (str %))
+                           (reset! errors (get-in % [:response :errors])))}))
+
+(defn errors-component [errors id]
+  (when-let [error (id @errors)]
+    [:div.notification.is-danger (string/join error)]))
 
 (defn add-business-partner []
-  (let [fields (r/atom {})]
+  (let [fields (r/atom {})
+        errors (r/atom {})]
     (fn []
       [:div.container.mt-5.w-50
        [:div.text-center [:h2 "Add A New Business Partner"]
        [:p "Fill in the form bellow to add a new business partner"]]
-       [:form {:action "/action_page"}
+       [:div
+        [errors-component errors :server-error]
         [:div.form-group
          [:label {:for :name} "Name"]
+         [errors-component errors :name]
          [:input#name.form-control
           {:type :text
            :name :name
@@ -17,7 +40,8 @@
            :value (:name @fields)
            }]]
         [:div.form-group
-         [:label {:for :address} "Adress"]
+         [:label {:for :address} "Address"]
+         [errors-component errors :address]
          [:input#address.form-control
           {:type :text
            :name :address
@@ -26,6 +50,7 @@
            }]]
         [:div.form-group
          [:label {:for :phone} "Phone"]
+         [errors-component errors :phone]
          [:input#phone.form-control
           {:type :text
            :name :phone
@@ -35,13 +60,18 @@
           ]]
         [:div.form-group
          [:label {:for :email} "Email"]
+         [errors-component errors :email]
          [:input#email.form-control
           {:type :email
            :name :email
            :on-change #(swap! fields assoc :email (-> % .-target .-value))
            :value (:email @fields)
            }]]
-        [:button.btn.btn-primary.btn-lg {:type :submit} "Save"]]])))
+        [:button.btn.btn-primary.btn-lg
+         {:type :submit
+          :on-click #(save-business-partner fields errors)} "Save"]]])))
+
+
 
 (defn home []
   [add-business-partner])

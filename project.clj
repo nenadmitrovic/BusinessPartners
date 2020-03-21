@@ -30,7 +30,8 @@
                  [ring/ring-defaults "0.3.2"]
                  [selmer "1.12.18"]
                  [com.novemberain/monger "3.1.0"]
-                 [reagent "0.10.0"]]
+                 [reagent "0.10.0"]
+                 [cljs-ajax "0.7.3"]]
 
   :min-lein-version "2.0.0"
   
