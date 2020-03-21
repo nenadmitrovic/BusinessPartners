@@ -26,7 +26,7 @@
         errors (r/atom {})]
     (fn []
       [:div.container.mt-5.w-50
-       [:div.text-center [:h2 "Add A New Business Partner"]
+       [:div.text-center [:h2 "Add New Business Partner"]
        [:p "Fill in the form bellow to add a new business partner"]]
        [:div
         [errors-component errors :server-error]

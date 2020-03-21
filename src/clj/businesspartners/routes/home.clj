@@ -6,29 +6,10 @@
    [ring.util.response]
    [ring.util.http-response :as response]
    [businesspartners.db.dbbroker :as db]
-   [struct.core :as st]))
-
-(def message-schema
-  [[:name
-    st/required
-    st/string]
-   [:adress
-    st/required
-    st/string]
-   [:phone
-    st/required
-    st/string]
-   [:email
-    st/required
-    st/string
-    st/email]])
-
-(defn validate-params [params]
-  (first (st/validate params message-schema)))
-
+   [businesspartners.validation :refer [validate-business-partner]]))
 
 (defn save-business-partner [{:keys [params]}]
-  (if-let [errors (validate-params params)]
+  (if-let [errors (validate-business-partner params)]
     (response/bad-request {:errors errors})
   (try
     (db/save-partner params)
