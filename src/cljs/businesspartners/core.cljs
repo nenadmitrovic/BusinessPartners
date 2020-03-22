@@ -81,7 +81,8 @@
 (defn business-partners-list [business-partners]
   (println business-partners)
   [:div.container.mt-5.w-75
-   [:table.table.table-hover
+   [:h2.text-center "Your business partners:"]
+   [:table.table.table-hover.mt-4
     [:thead
      [:tr
       [:th "Name"]
