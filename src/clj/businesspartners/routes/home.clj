@@ -33,10 +33,18 @@
 (defn about-page [request]
   (layout/render request "about.html"))
 
+(defn business-partners [request]
+  (layout/render request "businesspartners.html"))
+
+(defn businesspartners-list [_]
+  (response/ok {:business-partners (vec (db/get-all-partners))}))
+
 (defn home-routes []
   [""
    {:middleware [middleware/wrap-csrf
                  middleware/wrap-formats]}
+   ["/businesspartners" {:get business-partners}]
+   ["/getbusinesspartners" {:get businesspartners-list}]
    ["/save-business-partner" {:post save-business-partner}]
    ["/test" {:get test-page}]
    ["/" {:get home-page}]

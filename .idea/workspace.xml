@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="3fa068f7-de9b-4793-9d22-fae590d74c94" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/businesspartners.iml" beforeDir="false" afterPath="$PROJECT_DIR$/businesspartners.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project.clj" beforeDir="false" afterPath="$PROJECT_DIR$/project.clj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/html/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/html/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/html/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/html/test.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/clj/businesspartners/routes/home.clj" beforeDir="false" afterPath="$PROJECT_DIR$/src/clj/businesspartners/routes/home.clj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cljs/businesspartners/core.cljs" beforeDir="false" afterPath="$PROJECT_DIR$/src/cljs/businesspartners/core.cljs" afterDir="false" />
     </list>
@@ -18,9 +17,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Clojure Namespace" />
-        <option value="ClojureScript Namespace" />
-        <option value="HTML File" />
         <option value="CLJC Namespace" />
+        <option value="HTML File" />
+        <option value="ClojureScript Namespace" />
       </list>
     </option>
   </component>
@@ -42,7 +41,12 @@
     <property name="cursive.last.file.extension./home/nenad/Desktop/ClojureJob/businesspartners/src/cljc" value="cljc" />
     <property name="cursive.last.file.extension./home/nenad/Desktop/ClojureJob/businesspartners/src/cljs" value="cljs" />
   </component>
-  <component name="ReplState" timestamp="1584824702203">{:repl-history {:ide [], :local [], :remote []}}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/cljs/getbusinesspartners" />
+    </key>
+  </component>
+  <component name="ReplState" timestamp="1584844744541">{:repl-history {:ide [], :local [], :remote []}}</component>
   <component name="RunManager">
     <configuration name="REPL for businesspartners" type="ClojureREPL" factoryName="Local" activateToolWindowBeforeRun="false" temporary="true">
       <module name="businesspartners" />
@@ -99,9 +103,9 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="676" y="280" width="624" height="544" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/67.27.1853.1053/1920.0.1920.1080@67.27.1853.1053" timestamp="1584821592983" />
-    <state x="649" y="380" key="com.intellij.ide.util.TipDialog" timestamp="1584821868551">
+    <state x="649" y="380" key="com.intellij.ide.util.TipDialog" timestamp="1584881471891">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="649" y="380" key="com.intellij.ide.util.TipDialog/67.27.1853.1053/1920.0.1920.1080@67.27.1853.1053" timestamp="1584821868551" />
+    <state x="649" y="380" key="com.intellij.ide.util.TipDialog/67.27.1853.1053/1920.0.1920.1080@67.27.1853.1053" timestamp="1584881471891" />
   </component>
 </project>

@@ -3,6 +3,14 @@
             [ajax.core :refer [GET POST]]
             [clojure.string :as string]))
 
+
+(defn get-business-partners [business-partners]
+  (GET "getbusinesspartners"
+       {:headers {"Accept" "application/transit+json"}
+        :handler #(reset! business-partners (:business-partners %))}))
+
+
+
 (defn save-business-partner [fields errors]
   (POST "/save-business-partner"
         {:format :json
@@ -71,11 +79,36 @@
          {:type :submit
           :on-click #(save-business-partner fields errors)} "Save"]]])))
 
+(defn business-partners-list [business-partners]
+  (println business-partners)
+  [:div.container.mt-5.w-50
+   [:table.table.table-hover
+    [:thead
+     [:tr
+      [:th "Name"]
+      [:th "Address"]
+      [:th "Phone"]
+      [:th "Email"]]]
+    [:tbody
+     (for [{:keys [name address phone email]} @business-partners]
+       [:tr
+        [:td name]
+        [:td address]
+        [:td phone]
+        [:td email]])]]])
+
 
 
 (defn home []
-  [add-business-partner])
+  (let [business-partners (r/atom nil)]
+    (get-business-partners business-partners)
+    (fn []
+      [:div.container
+       [add-business-partner]]
+      [:div.container
+       [business-partners-list]])))
 
 (r/render
   [home]
   (.getElementById js/document "content"))
+
