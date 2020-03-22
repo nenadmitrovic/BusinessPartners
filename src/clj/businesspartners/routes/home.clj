@@ -36,7 +36,7 @@
 (defn business-partners [request]
   (layout/render request "businesspartners.html"))
 
-(defn businesspartners-list [_]
+(defn businesspartners-list []
   (response/ok {:business-partners (vec (db/get-all-partners))}))
 
 (defn home-routes []

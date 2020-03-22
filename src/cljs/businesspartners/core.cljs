@@ -4,14 +4,7 @@
             [clojure.string :as string]))
 
 
-(defn get-business-partners [business-partners]
-  (GET "getbusinesspartners"
-       {:headers {"Accept" "application/transit+json"}
-        :handler #(reset! business-partners (:business-partners %))}))
-
-
-
-(defn save-business-partner [fields errors]
+(defn save-business-partner [fields errors business-partners]
   (POST "/save-business-partner"
         {:format :json
          :headers
@@ -19,7 +12,8 @@
                   "x-csrf-token" (.-value (.getElementById js/document "token"))}
          :params @fields
          :handler #(do
-                     (.log js/console (str "response:" %))
+                     (swap! business-partners conj @fields)
+                     (reset! fields nil)
                      (reset! errors nil))
          :error-handler #(do
                            (.log js/console (str %))
@@ -29,11 +23,11 @@
   (when-let [error (id @errors)]
     [:div.notification.is-danger (string/join error)]))
 
-(defn add-business-partner []
+(defn add-business-partner [business-partners]
   (let [fields (r/atom {})
         errors (r/atom {})]
     (fn []
-      [:div.container.mt-5.w-50
+      [:div.container.mt-5.w-75
        [:div.text-center [:h2 "Add New Business Partner"]
        [:p "Fill in the form bellow to add a new business partner"]]
        [:div
@@ -77,11 +71,16 @@
            }]]
         [:button.btn.btn-primary.btn-lg
          {:type :submit
-          :on-click #(save-business-partner fields errors)} "Save"]]])))
+          :on-click #(save-business-partner fields errors business-partners)} "Save"]]])))
+
+(defn get-business-partners [business-partners]
+  (GET "/getbusinesspartners"
+       {:headers {"Accept" "application/transit+json"}
+        :handler #(reset! business-partners (:business-partners %))}))
 
 (defn business-partners-list [business-partners]
   (println business-partners)
-  [:div.container.mt-5.w-50
+  [:div.container.mt-5.w-75
    [:table.table.table-hover
     [:thead
      [:tr
@@ -97,16 +96,15 @@
         [:td phone]
         [:td email]])]]])
 
-
-
 (defn home []
   (let [business-partners (r/atom nil)]
     (get-business-partners business-partners)
     (fn []
       [:div.container
-       [add-business-partner]]
-      [:div.container
-       [business-partners-list]])))
+       [:div.container
+        [add-business-partner business-partners]]
+       [:div.container
+        [business-partners-list business-partners]]])))
 
 (r/render
   [home]
