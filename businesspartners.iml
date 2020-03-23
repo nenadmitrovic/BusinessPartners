@@ -103,6 +103,7 @@
     <orderEntry type="library" name="Leiningen: mount:0.1.16" level="project" />
     <orderEntry type="library" name="Leiningen: mvxcvi/arrangement:1.2.0" level="project" />
     <orderEntry type="library" name="Leiningen: mvxcvi/puget:1.1.2" level="project" />
+    <orderEntry type="library" name="Leiningen: net.cgrand/macrovich:0.2.1" level="project" />
     <orderEntry type="library" name="Leiningen: net.colourcoding/poppea:0.2.1" level="project" />
     <orderEntry type="library" name="Leiningen: net.jodah/expiringmap:0.5.9" level="project" />
     <orderEntry type="library" name="Leiningen: nrepl:0.6.0" level="project" />
@@ -145,6 +146,7 @@
     <orderEntry type="library" name="Leiningen: potemkin:0.4.5" level="project" />
     <orderEntry type="library" name="Leiningen: prismatic/schema:1.1.11" level="project" />
     <orderEntry type="library" name="Leiningen: prone:2019-07-08" level="project" />
+    <orderEntry type="library" name="Leiningen: re-frame:0.12.0" level="project" />
     <orderEntry type="library" name="Leiningen: reagent:0.10.0" level="project" />
     <orderEntry type="library" name="Leiningen: realize:2019-04-24" level="project" />
     <orderEntry type="library" name="Leiningen: riddley:0.1.12" level="project" />

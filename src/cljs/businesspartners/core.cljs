@@ -5,7 +5,7 @@
 
 
 (defn save-business-partner [fields errors business-partners]
-  (POST "/save-business-partner"
+  (POST "/api/business-partner"
         {:format :json
          :headers
                  {"Accept" "application/transit+json"
@@ -74,7 +74,7 @@
           :on-click #(save-business-partner fields errors business-partners)} "Save"]]])))
 
 (defn get-business-partners [business-partners]
-  (GET "/getbusinesspartners"
+  (GET "/api/business-partners"
        {:headers {"Accept" "application/transit+json"}
         :handler #(reset! business-partners (:business-partners %))}))
 
