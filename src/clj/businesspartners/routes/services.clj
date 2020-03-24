@@ -26,7 +26,7 @@
      (fn [{:keys [params]}]
        (try
          (bp/save-business-partner params)
-         (response/ok {:status :ok})
+         (response/ok (bp/business-partners-list))
          (catch Exception e
            (let [{id :business-partners/error-id
                   errors :errors} (ex-data e)]
@@ -36,9 +36,11 @@
                (response/internal-server-error
                  {:errors {:server-error ["Failed to save message!"]}}))))))}]
    ["/delete-business-partner"
-    {:delete
+    {:post
      (fn [{:keys [params]}]
-       (let [id (get params :_id)]
+       (let [id (get params :id)]
          (do
            (bp/delete-partner-by-id id)
-           (response/ok {:status :ok}))))}]])
+           (response/ok (bp/business-partners-list)))))}]])
+
+(bp/business-partners-list)

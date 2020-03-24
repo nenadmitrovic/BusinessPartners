@@ -12,7 +12,7 @@
                   "x-csrf-token" (.-value (.getElementById js/document "token"))}
          :params @fields
          :handler #(do
-                     (swap! business-partners conj @fields)
+                     (reset! business-partners (:business-partners %))
                      (reset! fields nil)
                      (reset! errors nil))
          :error-handler #(do
@@ -78,10 +78,17 @@
        {:headers {"Accept" "application/transit+json"}
         :handler #(reset! business-partners (:business-partners %))}))
 
+(defn delete-business-partner [business-partners id]
+  (POST "/api/delete-business-partner"
+        {:headers {"Accept" "application/transit+json"}
+         :format :json
+         :params {:id id}
+         :handler #(reset! business-partners (:business-partners %))}))
+
 
 
 (defn business-partners-list [business-partners]
-  (println business-partners)
+  (println (str "Moji biznis partneri: " business-partners))
   [:div.container.mt-5.w-100
    [:h2.text-center "Your business partners:"]
    [:table.table.table-hover.mt-4
@@ -97,7 +104,11 @@
         [:td name]
         [:td address]
         [:td phone]
-        [:td email]])]]])
+        [:td email]
+        [:input
+         {:type :submit
+          :value "Delete"
+          :onClick #(delete-business-partner business-partners _id)}]])]]])
 
 
 

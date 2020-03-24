@@ -2,38 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3fa068f7-de9b-4793-9d22-fae590d74c94" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__borkdude_edamame_0_0_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__borkdude_sci_0_0_11_alpha_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__clj_time_0_10_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__com_gfredericks_test_chuck_0_2_10.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__fipp_0_6_22.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__instaparse_1_3_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__joda_time_2_7.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__metosin_malli_0_0_1_SNAPSHOT.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__metosin_reitit_0_4_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__metosin_reitit_dev_0_4_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__metosin_reitit_malli_0_4_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_clojure_test_check_0_10_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__fipp_0_6_21.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__metosin_reitit_0_3_10.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__metosin_reitit_core_0_3_10.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__metosin_reitit_core_0_4_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__metosin_reitit_dev_0_3_10.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__metosin_reitit_frontend_0_3_10.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__metosin_reitit_frontend_0_4_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__metosin_reitit_http_0_3_10.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__metosin_reitit_http_0_4_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__metosin_reitit_interceptors_0_3_10.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__metosin_reitit_interceptors_0_4_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__metosin_reitit_middleware_0_3_10.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__metosin_reitit_middleware_0_4_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__metosin_reitit_ring_0_3_10.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__metosin_reitit_ring_0_4_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__metosin_reitit_schema_0_3_10.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__metosin_reitit_schema_0_4_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__metosin_reitit_sieppari_0_3_10.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__metosin_reitit_sieppari_0_4_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__metosin_reitit_spec_0_3_10.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__metosin_reitit_spec_0_4_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__metosin_reitit_swagger_0_3_10.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__metosin_reitit_swagger_0_4_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__metosin_reitit_swagger_ui_0_3_10.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__metosin_reitit_swagger_ui_0_4_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__metosin_schema_tools_0_12_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__metosin_schema_tools_0_12_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__prismatic_schema_1_1_11.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__prismatic_schema_1_1_12.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/businesspartners.iml" beforeDir="false" afterPath="$PROJECT_DIR$/businesspartners.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project.clj" beforeDir="false" afterPath="$PROJECT_DIR$/project.clj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/clj/businesspartners/businesspartners.clj" beforeDir="false" afterPath="$PROJECT_DIR$/src/clj/businesspartners/businesspartners.clj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/clj/businesspartners/routes/services.clj" beforeDir="false" afterPath="$PROJECT_DIR$/src/clj/businesspartners/routes/services.clj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cljs/businesspartners/core.cljs" beforeDir="false" afterPath="$PROJECT_DIR$/src/cljs/businesspartners/core.cljs" afterDir="false" />
     </list>
@@ -78,7 +47,7 @@
       <recent name="$PROJECT_DIR$/src/cljs/getbusinesspartners" />
     </key>
   </component>
-  <component name="ReplState" timestamp="1585068830586">{:repl-history {:ide [], :local [], :remote []}}</component>
+  <component name="ReplState" timestamp="1585075791603">{:repl-history {:ide [], :local [], :remote []}}</component>
   <component name="RunManager">
     <configuration name="REPL for businesspartners" type="ClojureREPL" factoryName="Local" activateToolWindowBeforeRun="false" temporary="true">
       <module name="businesspartners" />
