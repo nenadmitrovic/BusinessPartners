@@ -105,7 +105,7 @@
         [:td address]
         [:td phone]
         [:td email]
-        [:input
+        [:input.btn.btn-primary
          {:type :submit
           :value "Delete"
           :onClick #(delete-business-partner business-partners _id)}]])]]])

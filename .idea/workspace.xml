@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="3fa068f7-de9b-4793-9d22-fae590d74c94" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/clj/businesspartners/routes/services.clj" beforeDir="false" afterPath="$PROJECT_DIR$/src/clj/businesspartners/routes/services.clj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cljs/businesspartners/core.cljs" beforeDir="false" afterPath="$PROJECT_DIR$/src/cljs/businesspartners/core.cljs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,7 +46,7 @@
       <recent name="$PROJECT_DIR$/src/cljs/getbusinesspartners" />
     </key>
   </component>
-  <component name="ReplState" timestamp="1585075791603">{:repl-history {:ide [], :local [], :remote []}}</component>
+  <component name="ReplState" timestamp="1585076152378">{:repl-history {:ide [], :local [], :remote []}}</component>
   <component name="RunManager">
     <configuration name="REPL for businesspartners" type="ClojureREPL" factoryName="Local" activateToolWindowBeforeRun="false" temporary="true">
       <module name="businesspartners" />
