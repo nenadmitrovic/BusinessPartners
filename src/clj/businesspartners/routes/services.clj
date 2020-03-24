@@ -1,11 +1,22 @@
 (ns businesspartners.routes.services
-  (:require [businesspartners.businesspartners :as bp]
-            [businesspartners.middleware :as middleware]
-            [ring.util.http-response :as response]))
+  (:require
+    [reitit.swagger :as swagger]
+    [reitit.swagger-ui :as swagger-ui]
+    [businesspartners.businesspartners :as bp]
+    [businesspartners.middleware :as middleware]
+    [ring.util.http-response :as response]
+    [businesspartners.db.dbbroker :as db]))
 
 (defn service-routes []
   ["/api"
-   {:middleware [middleware/wrap-formats]}
+   {:middleware [middleware/wrap-formats]
+    :swagger {:id ::api}}
+   ["" {:no-doc true}
+    ["/swagger.json"
+     {:get (swagger/create-swagger-handler)}]
+    ["/swagger-ui*"
+     {:get (swagger-ui/create-swagger-ui-handler
+             {:url "/api/swagger.json"})}]]
    ["/business-partners"
     {:get
      (fn [_]
@@ -23,4 +34,11 @@
                :validation
                (response/bad-request {:errors errors})
                (response/internal-server-error
-                 {:errors {:server-error ["Failed to save message!"]}}))))))}]])
+                 {:errors {:server-error ["Failed to save message!"]}}))))))}]
+   ["/delete-business-partner"
+    {:delete
+     (fn [{:keys [params]}]
+       (let [id (get params :_id)]
+         (do
+           (bp/delete-partner-by-id id)
+           (response/ok {:status :ok}))))}]])

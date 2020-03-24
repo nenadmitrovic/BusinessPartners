@@ -78,9 +78,11 @@
        {:headers {"Accept" "application/transit+json"}
         :handler #(reset! business-partners (:business-partners %))}))
 
+
+
 (defn business-partners-list [business-partners]
   (println business-partners)
-  [:div.container.mt-5.w-75
+  [:div.container.mt-5.w-100
    [:h2.text-center "Your business partners:"]
    [:table.table.table-hover.mt-4
     [:thead
@@ -90,12 +92,14 @@
       [:th "Phone"]
       [:th "Email"]]]
     [:tbody
-     (for [{:keys [name address phone email]} @business-partners]
+     (for [{:keys [_id name address phone email]} @business-partners]
        [:tr
         [:td name]
         [:td address]
         [:td phone]
         [:td email]])]]])
+
+
 
 (defn home []
   (let [business-partners (r/atom nil)]

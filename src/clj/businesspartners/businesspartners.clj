@@ -14,3 +14,8 @@
                     {:business-partners/error-id :validation
                      :errors errors}))
     (db/save-partner business-partner)))
+
+(defn delete-partner-by-id [id]
+  (db/delete-partner-by-id id))
+
+

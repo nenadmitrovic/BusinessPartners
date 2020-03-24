@@ -2,16 +2,40 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3fa068f7-de9b-4793-9d22-fae590d74c94" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__net_cgrand_macrovich_0_2_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__re_frame_0_12_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__borkdude_edamame_0_0_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__borkdude_sci_0_0_11_alpha_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__clj_time_0_10_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__com_gfredericks_test_chuck_0_2_10.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__fipp_0_6_22.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__instaparse_1_3_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__joda_time_2_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__metosin_malli_0_0_1_SNAPSHOT.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__metosin_reitit_0_4_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__metosin_reitit_dev_0_4_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__metosin_reitit_malli_0_4_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__org_clojure_test_check_0_10_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__fipp_0_6_21.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__metosin_reitit_0_3_10.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__metosin_reitit_core_0_3_10.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__metosin_reitit_core_0_4_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__metosin_reitit_dev_0_3_10.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__metosin_reitit_frontend_0_3_10.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__metosin_reitit_frontend_0_4_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__metosin_reitit_http_0_3_10.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__metosin_reitit_http_0_4_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__metosin_reitit_interceptors_0_3_10.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__metosin_reitit_interceptors_0_4_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__metosin_reitit_middleware_0_3_10.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__metosin_reitit_middleware_0_4_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__metosin_reitit_ring_0_3_10.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__metosin_reitit_ring_0_4_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__metosin_reitit_schema_0_3_10.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__metosin_reitit_schema_0_4_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__metosin_reitit_sieppari_0_3_10.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__metosin_reitit_sieppari_0_4_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__metosin_reitit_spec_0_3_10.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__metosin_reitit_spec_0_4_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__metosin_reitit_swagger_0_3_10.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__metosin_reitit_swagger_0_4_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__metosin_reitit_swagger_ui_0_3_10.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__metosin_reitit_swagger_ui_0_4_2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__metosin_schema_tools_0_12_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__metosin_schema_tools_0_12_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Leiningen__prismatic_schema_1_1_11.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Leiningen__prismatic_schema_1_1_12.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/businesspartners.iml" beforeDir="false" afterPath="$PROJECT_DIR$/businesspartners.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project.clj" beforeDir="false" afterPath="$PROJECT_DIR$/project.clj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/html/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/html/test.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/clj/businesspartners/handler.clj" beforeDir="false" afterPath="$PROJECT_DIR$/src/clj/businesspartners/handler.clj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/clj/businesspartners/routes/home.clj" beforeDir="false" afterPath="$PROJECT_DIR$/src/clj/businesspartners/routes/home.clj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/clj/businesspartners/businesspartners.clj" beforeDir="false" afterPath="$PROJECT_DIR$/src/clj/businesspartners/businesspartners.clj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/clj/businesspartners/routes/services.clj" beforeDir="false" afterPath="$PROJECT_DIR$/src/clj/businesspartners/routes/services.clj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cljs/businesspartners/core.cljs" beforeDir="false" afterPath="$PROJECT_DIR$/src/cljs/businesspartners/core.cljs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cljs/businesspartners/test.cljs" beforeDir="false" afterPath="$PROJECT_DIR$/src/cljs/businesspartners/test.cljs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +64,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="GoToKeyword.includeLibraries" value="false" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="cursive.last.file.extension./home/nenad/Desktop/ClojureJob/businesspartners/src/clj" value="clj" />
@@ -53,7 +78,7 @@
       <recent name="$PROJECT_DIR$/src/cljs/getbusinesspartners" />
     </key>
   </component>
-  <component name="ReplState" timestamp="1584991263147">{:repl-history {:ide [], :local [], :remote []}}</component>
+  <component name="ReplState" timestamp="1585068830586">{:repl-history {:ide [], :local [], :remote []}}</component>
   <component name="RunManager">
     <configuration name="REPL for businesspartners" type="ClojureREPL" factoryName="Local" activateToolWindowBeforeRun="false" temporary="true">
       <module name="businesspartners" />
@@ -110,9 +135,13 @@
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="676" y="280" width="624" height="544" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/67.27.1853.1053/1920.0.1920.1080@67.27.1853.1053" timestamp="1584821592983" />
-    <state x="648" y="392" key="com.intellij.ide.util.TipDialog" timestamp="1584984558374">
+    <state x="648" y="392" key="com.intellij.ide.util.TipDialog" timestamp="1585053859386">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
-    <state x="648" y="392" key="com.intellij.ide.util.TipDialog/67.27.1853.1053/1920.0.1920.1080@67.27.1853.1053" timestamp="1584984558374" />
+    <state x="648" y="392" key="com.intellij.ide.util.TipDialog/67.27.1853.1053/1920.0.1920.1080@67.27.1853.1053" timestamp="1585053859386" />
+    <state x="584" y="257" width="816" height="678" key="search.everywhere.popup" timestamp="1585008840140">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="584" y="257" width="816" height="678" key="search.everywhere.popup/67.27.1853.1053/1920.0.1920.1080@67.27.1853.1053" timestamp="1585008840140" />
   </component>
 </project>
