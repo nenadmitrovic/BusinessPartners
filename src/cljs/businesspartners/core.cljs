@@ -4,6 +4,10 @@
             [clojure.string :as string]))
 
 
+(def component (r/atom ""))
+
+
+
 (defn save-business-partner [fields errors business-partners]
   (POST "/api/business-partner"
         {:format :json
@@ -30,6 +34,56 @@
       [:div.container.mt-5.w-75
        [:div.text-center [:h2 "Add New Business Partner"]
        [:p "Fill in the form bellow to add a new business partner"]]
+       [:div
+        [errors-component errors :server-error]
+        [:div.form-group
+         [:label {:for :name} "Name"]
+         [errors-component errors :name]
+         [:input#name.form-control
+          {:type :text
+           :name :name
+           :on-change #(swap! fields assoc :name (-> % .-target .-value))
+           :value (:name @fields)
+           }]]
+        [:div.form-group
+         [:label {:for :address} "Address"]
+         [errors-component errors :address]
+         [:input#address.form-control
+          {:type :text
+           :name :address
+           :on-change #(swap! fields assoc :address (-> % .-target .-value))
+           :value (:address @fields)
+           }]]
+        [:div.form-group
+         [:label {:for :phone} "Phone"]
+         [errors-component errors :phone]
+         [:input#phone.form-control
+          {:type :text
+           :name :phone
+           :on-change #(swap! fields assoc :phone (-> % .-target .-value))
+           :value (:phone @fields)
+           }
+          ]]
+        [:div.form-group
+         [:label {:for :email} "Email"]
+         [errors-component errors :email]
+         [:input#email.form-control
+          {:type :email
+           :name :email
+           :on-change #(swap! fields assoc :email (-> % .-target .-value))
+           :value (:email @fields)
+           }]]
+        [:button.btn.btn-primary.btn-lg
+         {:type :submit
+          :on-click #(save-business-partner fields errors business-partners)} "Save"]]])))
+
+(defn add-update-partner [business-partners]
+  (let [fields (r/atom {})
+        errors (r/atom {})]
+    (fn []
+      [:div.container.mt-5.w-75
+       [:div.text-center [:h2 "Add New Business Partner"]
+        [:p "Fill in the form bellow to add a new business partner"]]
        [:div
         [errors-component errors :server-error]
         [:div.form-group
@@ -106,21 +160,37 @@
         [:td phone]
         [:td email]
         [:input.btn.btn-primary
-         {:type :submit
-          :value "Delete"
-          :onClick #(delete-business-partner business-partners _id)}]])]]])
+          {:type :submit
+           :value "Delete"
+           :onClick #(delete-business-partner business-partners _id)}]
+         [:input.btn.btn-primary.ml-2
+          {:type :submit
+           :value "Update"
+           :onClick #(reset! component "update")}]])]]])
 
 
+(defn update-form []
+  [:div.container
+   [:h1 "Welcome to update form"]
+   [:input.btn.btn-primary
+    {:type :submit
+     :value "Start"
+     :onClick #(reset! component "")}]])
 
 (defn home []
   (let [business-partners (r/atom nil)]
     (get-business-partners business-partners)
     (fn []
-      [:div.container
-       [:div.container
-        [add-business-partner business-partners]]
-       [:div.container
-        [business-partners-list business-partners]]])))
+      (if (= @component "")
+        [:div.container
+         [:div.container
+          [add-business-partner business-partners]]
+         [:div.container
+          [business-partners-list business-partners]]]
+        [:div.container
+         [update-form]]))))
+
+
 
 (r/render
   [home]

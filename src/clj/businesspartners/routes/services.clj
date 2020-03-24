@@ -41,6 +41,9 @@
        (let [id (get params :id)]
          (do
            (bp/delete-partner-by-id id)
-           (response/ok (bp/business-partners-list)))))}]])
-
-(bp/business-partners-list)
+           (response/ok (bp/business-partners-list)))))}]
+   ["/get-partner-by-id"
+    {:get
+     (fn [{:keys [params]}]
+       (let [id (get params :id)]
+         (response/ok (bp/get-partner-by-id id))))}]])

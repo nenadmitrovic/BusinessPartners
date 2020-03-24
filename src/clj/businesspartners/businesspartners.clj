@@ -18,4 +18,8 @@
 (defn delete-partner-by-id [id]
   (db/delete-partner-by-id id))
 
+(defn get-partner-by-id [id]
+  (db/get-partner-by-id id))
+
+
 
