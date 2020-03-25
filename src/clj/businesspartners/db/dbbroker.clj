@@ -31,11 +31,10 @@
 (defn get-all-partners []
   (map transform-id-to-string (monger.collection/find-maps db "partners")))
 
-(defn update-partner-by-id [^String id document collection]
+(defn update-partner-by-id [id document]
   (try
     (-> document
-        (dissoc :_id)
-        (#(monger.collection/update-by-id db collection (ObjectId. id) %))
+        (#(monger.collection/update-by-id db "partners" (ObjectId. id) %))
         .getN)
     (catch Exception e -1)))
 

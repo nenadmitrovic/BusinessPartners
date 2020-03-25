@@ -46,4 +46,10 @@
     {:get
      (fn [{:keys [params]}]
        (let [id (get params :id)]
-         (response/ok {:business-partner (bp/get-partner-by-id id)})))}]])
+         (response/ok {:business-partner (bp/get-partner-by-id id)})))}]
+   ["/update-partner-by-id"
+    {:post
+     (fn [{:keys [params]}]
+       (do
+         (bp/update-partner-by-id (:id params) (:business-partner params))
+         (response/ok)))}]])

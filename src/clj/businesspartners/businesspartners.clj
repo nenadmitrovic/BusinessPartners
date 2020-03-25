@@ -21,5 +21,9 @@
 (defn get-partner-by-id [id]
   (db/get-partner-by-id id))
 
+(defn update-partner-by-id [id document]
+  (db/update-partner-by-id id document))
+
+
 
 
