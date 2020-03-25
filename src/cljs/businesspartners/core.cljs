@@ -5,6 +5,9 @@
 
 
 (def component (r/atom ""))
+(def business-partner-id (r/atom nil))
+(def business-partner (r/atom nil))
+
 
 
 
@@ -77,55 +80,20 @@
          {:type :submit
           :on-click #(save-business-partner fields errors business-partners)} "Save"]]])))
 
-(defn add-update-partner [business-partners]
-  (let [fields (r/atom {})
-        errors (r/atom {})]
+(defn get-partner-by-id [id]
+  (GET "/api/get-partner-by-id"
+       {:headers {"Accept" "application/transit+json"}
+        :params {:id id}
+        :handler (fn [arg]
+                   (println :handler-arg arg)
+                   (reset! business-partner (:business-partner arg))
+                   (println "Business partner from handler: " @business-partner))}))
+
+(defn update-form []
     (fn []
-      [:div.container.mt-5.w-75
-       [:div.text-center [:h2 "Add New Business Partner"]
-        [:p "Fill in the form bellow to add a new business partner"]]
-       [:div
-        [errors-component errors :server-error]
-        [:div.form-group
-         [:label {:for :name} "Name"]
-         [errors-component errors :name]
-         [:input#name.form-control
-          {:type :text
-           :name :name
-           :on-change #(swap! fields assoc :name (-> % .-target .-value))
-           :value (:name @fields)
-           }]]
-        [:div.form-group
-         [:label {:for :address} "Address"]
-         [errors-component errors :address]
-         [:input#address.form-control
-          {:type :text
-           :name :address
-           :on-change #(swap! fields assoc :address (-> % .-target .-value))
-           :value (:address @fields)
-           }]]
-        [:div.form-group
-         [:label {:for :phone} "Phone"]
-         [errors-component errors :phone]
-         [:input#phone.form-control
-          {:type :text
-           :name :phone
-           :on-change #(swap! fields assoc :phone (-> % .-target .-value))
-           :value (:phone @fields)
-           }
-          ]]
-        [:div.form-group
-         [:label {:for :email} "Email"]
-         [errors-component errors :email]
-         [:input#email.form-control
-          {:type :email
-           :name :email
-           :on-change #(swap! fields assoc :email (-> % .-target .-value))
-           :value (:email @fields)
-           }]]
-        [:button.btn.btn-primary.btn-lg
-         {:type :submit
-          :on-click #(save-business-partner fields errors business-partners)} "Save"]]])))
+      [:div.container
+       [:h2 "Welcome to update form"]]))
+
 
 (defn get-business-partners [business-partners]
   (GET "/api/business-partners"
@@ -142,7 +110,6 @@
 
 
 (defn business-partners-list [business-partners]
-  (println (str "Moji biznis partneri: " business-partners))
   [:div.container.mt-5.w-100
    [:h2.text-center "Your business partners:"]
    [:table.table.table-hover.mt-4
@@ -166,31 +133,59 @@
          [:input.btn.btn-primary.ml-2
           {:type :submit
            :value "Update"
-           :onClick #(reset! component "update")}]])]]])
+           :onClick #(do (reset! business-partner-id _id)
+                          (reset! component "update")
+                          (get-partner-by-id _id))}]])]]])
 
-
-(defn update-form []
-  [:div.container
-   [:h1 "Welcome to update form"]
-   [:input.btn.btn-primary
-    {:type :submit
-     :value "Start"
-     :onClick #(reset! component "")}]])
+(defn update-partner []
+  (fn []
+    [:div.container.mt-5.w-75
+     [:h2.text-center "Update Business Partner"]
+     [:p.text-center "Fill in the form bellow to update the business partner"]
+    [:div
+     [:div.form-group
+      [:label {:for :name} "Name"]
+      [:input#name.form-control
+       {:type :text
+        :name :name
+        :value (:name @business-partner)
+        }]]
+     [:div.form-group
+      [:label {:for :name} "Address"]
+      [:input#address.form-control
+       {:type :text
+        :name :address
+        :value (:address @business-partner)
+        }]]
+     [:div.form-group
+      [:label {:for :name} "Phone"]
+      [:input#phone.form-control
+       {:type :text
+        :name :phone
+        :value (:phone @business-partner)
+        }]]
+     [:div.form-group
+      [:label {:for :name} "Email"]
+      [:input#email.form-control
+       {:type :text
+        :name :email
+        :value (:email @business-partner)
+        }]]
+     [:input.btn.btn-primary {:type :submit
+              :value "Update"}]]]))
 
 (defn home []
   (let [business-partners (r/atom nil)]
     (get-business-partners business-partners)
     (fn []
-      (if (= @component "")
-        [:div.container
-         [:div.container
-          [add-business-partner business-partners]]
-         [:div.container
-          [business-partners-list business-partners]]]
-        [:div.container
-         [update-form]]))))
-
-
+      (let [comp @component]
+        (case comp
+          "" [:div.container
+              [:div.container
+               [add-business-partner business-partners]]
+              [:div.container
+               [business-partners-list business-partners]]]
+          "update" (update-form))))))
 
 (r/render
   [home]
