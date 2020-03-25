@@ -46,4 +46,4 @@
     {:get
      (fn [{:keys [params]}]
        (let [id (get params :id)]
-         (response/ok (bp/get-partner-by-id id))))}]])
+         (response/ok {:business-partner (bp/get-partner-by-id id)})))}]])

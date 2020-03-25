@@ -92,7 +92,7 @@
 (defn update-form []
     (fn []
       [:div.container
-       [:h2 "Welcome to update form"]]))
+       [:h2 "Welcome to update form" @business-partner]]))
 
 
 (defn get-business-partners [business-partners]
@@ -137,10 +137,10 @@
                           (reset! component "update")
                           (get-partner-by-id _id))}]])]]])
 
-(defn update-partner []
+(defn update-partner [one-partner]
   (fn []
     [:div.container.mt-5.w-75
-     [:h2.text-center "Update Business Partner"]
+     [:h2.text-center "Update Business Partner" one-partner]
      [:p.text-center "Fill in the form bellow to update the business partner"]
     [:div
      [:div.form-group
@@ -171,11 +171,13 @@
         :name :email
         :value (:email @business-partner)
         }]]
-     [:input.btn.btn-primary {:type :submit
-              :value "Update"}]]]))
+     [:input.btn.btn-primary
+      {:type :submit
+       :value "Update"}]]]))
 
 (defn home []
-  (let [business-partners (r/atom nil)]
+  (let [business-partners (r/atom nil)
+        one-partner @business-partner]
     (get-business-partners business-partners)
     (fn []
       (let [comp @component]
@@ -185,7 +187,7 @@
                [add-business-partner business-partners]]
               [:div.container
                [business-partners-list business-partners]]]
-          "update" (update-form))))))
+          "update" (update-partner one-partner))))))
 
 (r/render
   [home]
