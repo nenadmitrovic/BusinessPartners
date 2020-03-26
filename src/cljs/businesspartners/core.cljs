@@ -127,7 +127,10 @@
         [:input.btn.btn-primary
           {:type :submit
            :value "Delete"
-           :onClick #(delete-business-partner business-partners _id)}]
+           :onClick #(let [answer (.confirm js/window "Are you sure you want to delete the business partner???")]
+                       (if (= answer true)
+                         (delete-business-partner business-partners _id)
+                         (.reload js/window.location true)))}]
          [:input.btn.btn-primary.ml-2
           {:type :submit
            :value "Update"
