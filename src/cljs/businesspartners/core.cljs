@@ -6,7 +6,7 @@
 
 (def business-partner-id (r/atom nil))
 (def business-partner (r/atom nil))
-(def component (r/atom ""))
+
 
 
 
@@ -79,7 +79,9 @@
            }]]
         [:button.btn.btn-primary.btn-lg
          {:type :submit
-          :on-click #(save-business-partner fields errors business-partners)} "Save"]]])))
+          :on-click #(do
+                       (save-business-partner fields errors business-partners)
+                       (.alert js/window "You have successfully added a new business partner!"))} "Save"]]])))
 
 (defn get-partner-by-id [id]
   (GET "/api/get-partner-by-id"
@@ -180,13 +182,17 @@
       [:input.btn.btn-primary
        {:type :submit
         :value "Update"
-        :onClick #(update-partner-by-id id @one-partner)}]]]))
+        :onClick #(do
+                    (update-partner-by-id id @one-partner)
+                    (.alert js/window "You have successfully updated your business partner!")
+                    (.reload js/window.location true))}]]]))
 
 (defn home []
   (let [business-partners (r/atom nil)
         one-partner business-partner
         component (r/atom "")]
     (get-business-partners business-partners)
+
     (fn []
         (cond
           (= @component "")
@@ -201,7 +207,7 @@
 
 
 (r/render
-  [home component]
+  [home]
    (.getElementById js/document "content"))
 
 
