@@ -50,6 +50,7 @@
    ["/update-partner-by-id"
     {:post
      (fn [{:keys [params]}]
-       (do
-         (bp/update-partner-by-id (:id params) (:business-partner params))
+       (let [business-partner (dissoc (:business-partner params) :_id)
+             id (:id params)]
+         (bp/update-partner-by-id id business-partner)
          (response/ok)))}]])

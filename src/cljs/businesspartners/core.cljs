@@ -26,6 +26,7 @@
                            (.log js/console (str %))
                            (reset! errors (get-in % [:response :errors])))}))
 
+
 (defn errors-component [errors id]
   (when-let [error (id @errors)]
     [:div.notification.is-danger (string/join error)]))
@@ -104,7 +105,7 @@
 
 
 
-(defn business-partners-list [business-partners]
+(defn business-partners-list [business-partners component]
   [:div.container.mt-5.w-100
    [:h2.text-center "Your business partners:"]
    [:table.table.table-hover.mt-4
@@ -135,11 +136,10 @@
 (defn update-partner-by-id [id business-partner]
   (POST "/api/update-partner-by-id"
         {:headers {"Accept" "application/transit+json"}
-         :format :json
          :params {:id id :business-partner business-partner}
          :handler #(println %)}))
 
-(defn update-partner [one-partner]
+(defn update-partner [one-partner component id]
   (fn []
     [:div.container.mt-5.w-75
      [:h2.text-center "Update Business Partner"]
@@ -179,23 +179,32 @@
          }]]
       [:input.btn.btn-primary
        {:type :submit
-        :value "Update"}]]]))
+        :value "Update"
+        :onClick #(update-partner-by-id id @one-partner)}]]]))
 
 (defn home []
   (let [business-partners (r/atom nil)
-        one-partner business-partner]
+        one-partner business-partner
+        component (r/atom "")]
     (get-business-partners business-partners)
     (fn []
-      (let [comp @component]
-        (case comp
-          "" [:div.container
+        (cond
+          (= @component "")
+              [:div.container
               [:div.container
                [add-business-partner business-partners]]
               [:div.container
-               [business-partners-list business-partners]]]
-          "update" (update-partner one-partner))))))
+               [business-partners-list business-partners component]]]
+          (= @component "update")
+              (update-partner one-partner component @business-partner-id)))))
+
+
 
 (r/render
-  [home]
-  (.getElementById js/document "content"))
+  [home component]
+   (.getElementById js/document "content"))
+
+
+
+
 
