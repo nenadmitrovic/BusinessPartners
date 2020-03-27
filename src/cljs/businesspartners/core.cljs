@@ -9,8 +9,6 @@
 
 
 
-
-
 (defn save-business-partner [fields errors business-partners]
   (POST "/api/business-partner"
         {:format :json
@@ -20,11 +18,13 @@
          :params @fields
          :handler #(do
                      (reset! business-partners (:business-partners %))
+                     (.alert js/window "You have successfully saved a new business partner!")
                      (reset! fields nil)
                      (reset! errors nil))
          :error-handler #(do
                            (.log js/console (str %))
-                           (reset! errors (get-in % [:response :errors])))}))
+                           (reset! errors (get-in % [:response :errors]))
+                           (println "Errors from save business partner: " @errors))}))
 
 
 (defn errors-component [errors id]
@@ -37,7 +37,7 @@
     (fn []
       [:div.container.mt-5.w-75
        [:div.text-center [:h2 "Add New Business Partner"]
-       [:p "Fill in the form bellow to add a new business partner"]]
+        [:p "Fill in the form bellow to add a new business partner"]]
        [:div
         [errors-component errors :server-error]
         [:div.form-group
@@ -80,8 +80,7 @@
         [:button.btn.btn-primary.btn-lg
          {:type :submit
           :on-click #(do
-                       (save-business-partner fields errors business-partners)
-                       (.alert js/window "You have successfully added a new business partner!"))} "Save"]]])))
+                       (save-business-partner fields errors business-partners))} "Save"]]])))
 
 (defn get-partner-by-id [id]
   (GET "/api/get-partner-by-id"

@@ -12,6 +12,13 @@
     "test.html"))
 
 
+(def at (atom {}))
+
+(println @at)
+
+
+
+
 (defn home-page [request]
   (layout/render
     request
