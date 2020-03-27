@@ -5,17 +5,25 @@
 (def message-schema
   [[:name
     st/required
-    st/string]
+    st/string
+    {:message "Name can containt not more than 30 characters!"
+     :validate (fn [name] (<= (count name) 30))}]
    [:address
     st/required
-    st/string]
+    st/string
+    {:message "Address can containt not more than 30 characters!"
+     :validate (fn [name] (<= (count name) 30))}]
    [:phone
     st/required
-    st/string]
+    st/string
+    {:message "Phone can containt not more than 30 characters!"
+     :validate (fn [name] (<= (count name) 30))}]
    [:email
     st/required
     st/string
-    st/email]])
+    st/email
+    {:message "Email can containt not more than 30 characters!"
+     :validate (fn [name] (<= (count name) 30))}]])
 
 (defn validate-business-partner [params]
   (first (st/validate params message-schema)))
